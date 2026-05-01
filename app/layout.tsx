@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | Mustapha Mele Mustapha"
   },
   description:
-    "Personal portfolio of Mustapha Mele Mustapha, a Nigerian tech student, founder of AxisVTU, creator of MMTechGlobe, and young entrepreneur building fintech, software, AI, and content in public.",
+    "Personal portfolio of Mustapha Mele Mustapha, a Nigerian tech student, founder of AxisVTU, creator of MMTechGlobe, and young entrepreneur building fintech, software, and content in public.",
   keywords: [
     "Mustapha Mele Mustapha",
     "AxisVTU",

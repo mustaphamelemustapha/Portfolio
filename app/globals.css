@@ -21,8 +21,8 @@ body {
   margin: 0;
   color: var(--foreground);
   background:
-    radial-gradient(circle at 50% -10%, rgba(67, 165, 139, 0.16), transparent 38rem),
-    linear-gradient(180deg, #08090c 0%, #0c0f14 48%, #08090c 100%);
+    radial-gradient(circle at 50% -10%, rgba(67, 165, 139, 0.12), transparent 38rem),
+    linear-gradient(180deg, #05070a 0%, #0a0d12 48%, #05070a 100%);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   text-rendering: geometricPrecision;
 }
@@ -83,7 +83,7 @@ a {
 
 .glass {
   border: 1px solid var(--line);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.055));
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(22px);
 }

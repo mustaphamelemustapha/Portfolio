@@ -6,7 +6,6 @@ import {
   BadgeCheck,
   Blocks,
   BookOpen,
-  Bot,
   BriefcaseBusiness,
   CheckCircle2,
   Code2,
@@ -26,6 +25,7 @@ import {
   Smartphone,
   Sparkles,
   TrendingUp,
+  Wrench,
   Zap
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -70,7 +70,7 @@ const skills = [
   { name: "Fintech product thinking", icon: TrendingUp },
   { name: "Content creation", icon: Megaphone },
   { name: "Branding", icon: BadgeCheck },
-  { name: "AI tools", icon: Bot }
+  { name: "Product research", icon: Wrench }
 ];
 
 const nowSignals = [
@@ -81,7 +81,7 @@ const nowSignals = [
   },
   {
     label: "Currently learning",
-    value: "Fintech systems, AI tools, and product design",
+    value: "Fintech systems, product design, and distribution",
     detail: "Turning curiosity into product decisions people can feel."
   },
   {
@@ -178,20 +178,23 @@ export function PortfolioSite() {
 
 function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#08090c]/72 backdrop-blur-xl">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="group flex items-center gap-3">
-          <span className="grid size-9 place-items-center rounded-lg border border-white/15 bg-white/8 font-display text-sm font-semibold text-white shadow-2xl">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/14 bg-[#08090c]/92 shadow-[0_18px_60px_rgba(0,0,0,0.32)] backdrop-blur-2xl">
+      <nav className="mx-auto flex h-[4.75rem] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <a href="#top" className="group flex min-w-0 items-center gap-3">
+          <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-emerald-100/24 bg-emerald-100/10 font-display text-sm font-semibold text-white shadow-2xl transition group-hover:border-emerald-100/44">
             MM
           </span>
-          <span className="hidden text-sm font-medium text-white/86 sm:block">Mustapha Mele</span>
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-semibold text-white sm:text-base">Mustapha Mele</span>
+            <span className="hidden text-xs font-medium text-emerald-50/76 sm:block">Founder & product builder</span>
+          </span>
         </a>
-        <div className="scrollbar-none hidden items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-white/6 p-1 md:flex">
+        <div className="scrollbar-none hidden items-center gap-5 overflow-x-auto lg:flex">
           {navItems.map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="rounded-full px-3 py-1.5 text-xs font-medium text-white/62 transition hover:bg-white/10 hover:text-white"
+              className="text-sm font-semibold text-white/74 transition hover:text-emerald-100"
             >
               {item}
             </a>
@@ -199,7 +202,7 @@ function Header() {
         </div>
         <a
           href="mailto:hello@mustaphamele.dev"
-          className="group inline-flex items-center gap-2 rounded-full border border-emerald-200/25 bg-emerald-200/10 px-4 py-2 text-sm font-semibold text-emerald-50 transition hover:border-emerald-100/50 hover:bg-emerald-200/16"
+          className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-100/32 bg-emerald-100 px-4 py-2.5 text-sm font-bold text-[#07110d] transition hover:border-white hover:bg-white"
         >
           Contact
           <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
@@ -220,19 +223,19 @@ function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="relative z-10"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/7 px-3 py-2 text-xs font-medium text-white/72 shadow-2xl backdrop-blur-xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/7 px-3 py-2 text-xs font-medium text-white/82 shadow-2xl backdrop-blur-xl">
             <Sparkles className="size-4 text-emerald-200" />
             Live from Nigeria: learning, shipping, documenting
           </div>
           <h1 className="font-display text-[clamp(3rem,8vw,7rem)] font-semibold leading-[0.93] tracking-normal text-white text-balance">
             Hi, I&apos;m Mustapha Mele Mustapha
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 sm:text-xl">
             Founder, product builder, and tech creator from Nigeria. I&apos;m building AxisVTU,
             growing MMTechGlobe, and learning in public with the kind of ambition that starts small,
             stays honest, and keeps moving.
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-white/48">
+          <p className="mt-4 max-w-xl text-sm leading-7 text-white/78">
             This is not just a portfolio. It is a record of a young builder turning late nights,
             experiments, code, content, and faith in the future into products people can actually use.
           </p>
@@ -260,12 +263,12 @@ function Hero() {
             ].map(([number, label]) => (
               <div key={label} className="rounded-2xl border border-white/10 bg-white/6 p-4 backdrop-blur-xl">
                 <p className="font-display text-xl font-semibold text-white">{number}</p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-white/46">{label}</p>
+                <p className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-white/64">{label}</p>
               </div>
             ))}
           </div>
-          <div className="mt-4 flex max-w-2xl flex-wrap gap-2 text-xs text-white/54">
-            {["Fintech builder", "Frontend craft", "Flutter learner", "AI-assisted workflow"].map((item) => (
+          <div className="mt-4 flex max-w-2xl flex-wrap gap-2 text-xs text-white/70">
+            {["Fintech builder", "Frontend craft", "Flutter learner", "Product discipline"].map((item) => (
               <span key={item} className="rounded-full border border-white/10 bg-black/22 px-3 py-1.5">
                 {item}
               </span>
@@ -295,7 +298,7 @@ function Hero() {
                     <span className={`size-1.5 rounded-full ${index === 0 ? "bg-emerald-200" : "bg-white/42"}`} />
                     <p className="text-xs font-semibold text-white/88">{item}</p>
                   </div>
-                  <p className="mt-1 text-[11px] text-white/46">{index === 0 ? "Shipping now" : "Growing steadily"}</p>
+                  <p className="mt-1 text-[11px] text-white/64">{index === 0 ? "Shipping now" : "Growing steadily"}</p>
                 </div>
               ))}
             </div>
@@ -312,12 +315,12 @@ function About() {
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <Card className="p-6 sm:p-8">
           <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/66">Founder note</p>
-          <p className="text-lg leading-8 text-white/72">
+          <p className="text-lg leading-8 text-white/82">
             I am a Nigerian tech student building real products while I am still becoming the person
             who can build bigger ones. That means studying, designing, coding, testing, sharing, and
             learning from every rough edge.
           </p>
-          <p className="mt-5 text-base leading-7 text-white/58">
+          <p className="mt-5 text-base leading-7 text-white/82">
             AxisVTU is where I practice product responsibility. MMTechGlobe is where I turn the
             journey into value for others. The bigger goal is to become a builder people can trust:
             clear in thought, serious in execution, and still human in the process.
@@ -352,7 +355,7 @@ function Now() {
           <h3 className="mt-7 font-display text-3xl font-semibold leading-tight text-white">
             The page is polished, but the journey is still in motion.
           </h3>
-          <p className="mt-4 text-base leading-7 text-white/60">
+          <p className="mt-4 text-base leading-7 text-white/74">
             I am not waiting to become perfect before building. I am using the process itself as the
             training ground: ship, learn, improve, share, repeat.
           </p>
@@ -371,10 +374,10 @@ function Now() {
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/62">{signal.label}</p>
                 <span className="h-px flex-1 bg-white/10 sm:mx-4" />
-                <Sparkles className="hidden size-4 text-white/30 transition group-hover:text-emerald-100 sm:block" />
+                <Sparkles className="hidden size-4 text-white/50 transition group-hover:text-emerald-100 sm:block" />
               </div>
               <h3 className="mt-4 font-display text-xl font-semibold text-white sm:text-2xl">{signal.value}</h3>
-              <p className="mt-2 text-sm leading-6 text-white/56">{signal.detail}</p>
+              <p className="mt-2 text-sm leading-6 text-white/70">{signal.detail}</p>
             </motion.div>
           ))}
         </div>
@@ -405,15 +408,15 @@ function FeaturedProjects() {
                   <span className="grid size-12 place-items-center rounded-2xl border border-white/12 bg-black/24">
                     <Icon className="size-6 text-emerald-100" />
                   </span>
-                  <span className="rounded-full border border-white/12 bg-white/8 px-3 py-1 text-xs font-medium text-white/62">
+                  <span className="rounded-full border border-white/12 bg-white/8 px-3 py-1 text-xs font-medium text-white/76">
                     {project.status}
                   </span>
                 </div>
                 <h3 className="font-display text-2xl font-semibold text-white">{project.name}</h3>
-                <p className="mt-4 min-h-28 text-sm leading-6 text-white/62">{project.description}</p>
+                <p className="mt-4 min-h-28 text-sm leading-6 text-white/76">{project.description}</p>
                 <div className="mt-5 rounded-2xl border border-white/10 bg-black/18 p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/36">Why it matters</p>
-                  <p className="mt-2 text-sm leading-6 text-white/58">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/82">Why it matters</p>
+                  <p className="mt-2 text-sm leading-6 text-white/82">
                     {project.name === "AxisVTU"
                       ? "It teaches the discipline of reliability: people do not just click buttons, they trust a product with real needs."
                       : project.name === "MMTechGlobe"
@@ -423,7 +426,7 @@ function FeaturedProjects() {
                 </div>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.stack.map((tag) => (
-                    <span key={tag} className="rounded-full border border-white/10 bg-white/7 px-3 py-1 text-xs text-white/58">
+                    <span key={tag} className="rounded-full border border-white/10 bg-white/7 px-3 py-1 text-xs text-white/82">
                       {tag}
                     </span>
                   ))}
@@ -432,7 +435,7 @@ function FeaturedProjects() {
                   <a className="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-emerald-100" href="#contact">
                     Discuss project <ArrowRight className="size-4" />
                   </a>
-                  <a className="inline-flex items-center gap-2 text-sm font-semibold text-white/48 transition hover:text-white" href="#content">
+                  <a className="inline-flex items-center gap-2 text-sm font-semibold text-white/78 transition hover:text-white" href="#content">
                     Story <ExternalLink className="size-4" />
                   </a>
                 </div>
@@ -451,7 +454,7 @@ function Skills() {
       <div className="mb-5 grid gap-3 lg:grid-cols-4">
         {principles.map((principle) => (
           <div key={principle} className="rounded-2xl border border-white/10 bg-black/18 p-4">
-            <p className="text-sm leading-6 text-white/62">{principle}</p>
+            <p className="text-sm leading-6 text-white/76">{principle}</p>
           </div>
         ))}
       </div>
@@ -498,7 +501,7 @@ function Journey() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-100/76">{item.year}</p>
               <div>
                 <h3 className="font-display text-xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/58">{item.body}</p>
+                <p className="mt-2 text-sm leading-6 text-white/82">{item.body}</p>
               </div>
             </motion.div>
           ))}
@@ -515,13 +518,13 @@ function BuildingInPublic() {
         <Card className="p-6 sm:p-8">
           <BookOpen className="size-7 text-emerald-100" />
           <h3 className="mt-6 font-display text-3xl font-semibold text-white">Sharing the process, not just the wins.</h3>
-          <p className="mt-4 text-base leading-7 text-white/62">
+          <p className="mt-4 text-base leading-7 text-white/76">
             The public journey matters: what is being learned, what is being shipped, what failed,
             and what improved. Mustapha uses content as accountability, education, and proof of
             momentum.
           </p>
           <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4">
-            <p className="text-sm leading-7 text-white/58">
+            <p className="text-sm leading-7 text-white/82">
               The goal is not to look finished. The goal is to show the becoming: the thinking, the
               experiments, the lessons, the better version after every launch.
             </p>
@@ -534,7 +537,7 @@ function BuildingInPublic() {
               <div key={channel.name} className="rounded-3xl border border-white/10 bg-white/[0.052] p-5 transition hover:bg-white/[0.075]">
                 <Icon className="size-6 text-white" />
                 <h3 className="mt-6 font-display text-xl font-semibold text-white">{channel.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/56">{channel.body}</p>
+                <p className="mt-3 text-sm leading-6 text-white/70">{channel.body}</p>
               </div>
             );
           })}
@@ -550,7 +553,7 @@ function Contact() {
       <div className="glass overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
         <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-end">
           <div>
-            <p className="max-w-2xl text-lg leading-8 text-white/66">
+            <p className="max-w-2xl text-lg leading-8 text-white/78">
               Open to thoughtful collaborations, product conversations, internships, partnerships,
               and opportunities that connect software with real-world value. If the work is serious,
               useful, and honest, I want to hear about it.
@@ -591,8 +594,8 @@ function Contact() {
                   aria-label={social.name}
                   className="group flex min-h-20 items-center justify-between rounded-2xl border border-white/10 bg-white/[0.052] p-4 transition hover:border-white/20 hover:bg-white/[0.082]"
                 >
-                  <span className="text-sm font-semibold text-white/72">{social.name}</span>
-                  <Icon className="size-5 text-white/44 transition group-hover:text-emerald-100" />
+                  <span className="text-sm font-semibold text-white/82">{social.name}</span>
+                  <Icon className="size-5 text-white/64 transition group-hover:text-emerald-100" />
                 </a>
               );
             })}
@@ -606,7 +609,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="border-t border-white/10 px-4 py-8 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/48 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/78 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Mustapha Mele Mustapha. Built with intention, pressure, and patience.</p>
         <div className="flex items-center gap-2">
           <CheckCircle2 className="size-4 text-emerald-100" />
@@ -665,7 +668,7 @@ function MiniSignal({
     <div className="rounded-3xl border border-white/10 bg-white/[0.052] p-6">
       <Icon className="size-7 text-emerald-100" />
       <h3 className="mt-6 font-display text-2xl font-semibold text-white">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-white/58">{body}</p>
+      <p className="mt-3 text-sm leading-6 text-white/82">{body}</p>
     </div>
   );
 }
