@@ -312,35 +312,15 @@ function Hero() {
 function About() {
   return (
     <Section id="about" eyebrow="About" title="The human side of the builder.">
-      <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="p-6 sm:p-8">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/66">Founder note</p>
-          <p className="text-lg leading-8 text-white/82">
-            I am a Nigerian tech student building real products while I am still becoming the person
-            who can build bigger ones. That means studying, designing, coding, testing, sharing, and
-            learning from every rough edge.
-          </p>
-          <p className="mt-5 text-base leading-7 text-white/82">
-            AxisVTU is where I practice product responsibility. MMTechGlobe is where I turn the
-            journey into value for others. The bigger goal is to become a builder people can trust:
-            clear in thought, serious in execution, and still human in the process.
-          </p>
-          <div className="mt-7 rounded-2xl border border-emerald-100/14 bg-emerald-100/[0.055] p-5">
-            <p className="text-sm leading-7 text-emerald-50/74">
-              “I want my work to prove that a young Nigerian builder can start with curiosity,
-              discipline, and a laptop, then grow into something useful for people far beyond his
-              first environment.”
-            </p>
-          </div>
-        </Card>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+      <div className="grid gap-4 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="grid gap-4">
           <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55 }}
-            className="group overflow-hidden rounded-3xl border border-white/12 bg-white/[0.055] p-2 shadow-2xl backdrop-blur-xl sm:col-span-2 lg:col-span-1"
+            className="group overflow-hidden rounded-3xl border border-white/12 bg-white/[0.055] p-2 shadow-2xl backdrop-blur-xl"
           >
             <div className="relative overflow-hidden rounded-[1.35rem] bg-white">
               <Image
@@ -348,7 +328,7 @@ function About() {
                 alt="Portrait of Mustapha Mele Mustapha"
                 width={1200}
                 height={1200}
-                className="aspect-[4/5] w-full object-cover object-[50%_18%] transition duration-700 group-hover:scale-[1.025]"
+                className="aspect-[4/5] w-full object-cover object-[50%_16%] transition duration-700 group-hover:scale-[1.025]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent p-5">
                 <p className="font-display text-2xl font-semibold text-white">Mustapha Mele Mustapha</p>
@@ -356,9 +336,47 @@ function About() {
               </div>
             </div>
           </motion.div>
+        </div>
+        <Card className="relative overflow-hidden p-6 sm:p-8 lg:p-10">
+          <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-emerald-200/10 blur-3xl" />
+          <div className="relative">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-emerald-100/78">Founder note</p>
+            <h3 className="font-display text-3xl font-semibold leading-tight text-white sm:text-5xl">
+              Building with ambition, but staying human about the process.
+            </h3>
+            <p className="mt-6 text-lg leading-8 text-white/84">
+              I am a Nigerian tech student building real products while I am still becoming the
+              person who can build bigger ones. That means studying, designing, coding, testing,
+              sharing, and learning from every rough edge.
+            </p>
+            <p className="mt-5 text-base leading-8 text-white/80">
+              AxisVTU is where I practice product responsibility. MMTechGlobe is where I turn the
+              journey into value for others. The bigger goal is to become a builder people can trust:
+              clear in thought, serious in execution, and grounded enough to keep improving.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-black/18 p-4">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-100/66">Focus</p>
+                <p className="mt-2 text-sm font-semibold text-white">Fintech, software, and practical digital products.</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-black/18 p-4">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-100/66">Standard</p>
+                <p className="mt-2 text-sm font-semibold text-white">Build with clarity, ship with patience, earn trust.</p>
+              </div>
+            </div>
+            <div className="mt-7 rounded-2xl border border-emerald-100/20 bg-emerald-100/[0.075] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+              <p className="text-base leading-8 text-emerald-50/86">
+                “I want my work to prove that a young Nigerian builder can start with curiosity,
+                discipline, and a laptop, then grow into something useful for people far beyond his
+                first environment.”
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <MiniSignal icon={ShieldCheck} title="Trust first" body="Products should feel clear before they feel clever." />
           <MiniSignal icon={Rocket} title="Global ambition" body="Building from Nigeria with taste, patience, and standards that can travel." />
-        </div>
       </div>
     </Section>
   );
