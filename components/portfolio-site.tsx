@@ -30,14 +30,14 @@ import {
 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const navItems = ["About", "Projects", "Skills", "Journey", "Content", "Contact"];
+const navItems = ["About", "Now", "Projects", "Skills", "Journey", "Content", "Contact"];
 
 const projects = [
   {
     name: "AxisVTU",
     status: "Founder-led build",
     description:
-      "A VTU and data fintech platform built for everyday Nigerian transactions, with a focus on speed, trust, and a clean customer experience.",
+      "A VTU and data fintech platform built from the ground up for everyday Nigerian transactions. The mission is simple: make digital utility feel fast, honest, and dependable.",
     stack: ["Fintech", "VTU", "Web app", "Mobile"],
     icon: Zap,
     accent: "from-emerald-300/20 to-cyan-300/10"
@@ -46,7 +46,7 @@ const projects = [
     name: "MMTechGlobe",
     status: "Creator brand",
     description:
-      "A technology education and content brand for sharing practical lessons, product progress, and the realities of learning tech in public.",
+      "A technology education and content brand where I share what I am learning, what I am building, and the honest process behind becoming better in public.",
     stack: ["Content", "Education", "Community", "Brand"],
     icon: Globe2,
     accent: "from-sky-300/18 to-white/5"
@@ -55,7 +55,7 @@ const projects = [
     name: "Bazehub",
     status: "Product experiment",
     description:
-      "A collaboration and product-thinking experiment that sharpens how ideas move from concept to useful software people can understand.",
+      "A product experiment around collaboration, clarity, and useful tools. It is part lab, part lesson, and part proof that ideas become stronger when shipped.",
     stack: ["Product", "Collaboration", "UX", "Prototype"],
     icon: Blocks,
     accent: "from-amber-200/16 to-emerald-300/8"
@@ -71,6 +71,31 @@ const skills = [
   { name: "Content creation", icon: Megaphone },
   { name: "Branding", icon: BadgeCheck },
   { name: "AI tools", icon: Bot }
+];
+
+const nowSignals = [
+  {
+    label: "Currently building",
+    value: "AxisVTU web and app experience",
+    detail: "Improving trust, onboarding, and transaction flow."
+  },
+  {
+    label: "Currently learning",
+    value: "Fintech systems, AI tools, and product design",
+    detail: "Turning curiosity into product decisions people can feel."
+  },
+  {
+    label: "Currently sharing",
+    value: "The real student-founder journey",
+    detail: "Progress, mistakes, lessons, launches, and useful proof."
+  }
+];
+
+const principles = [
+  "Build useful things before talking too much.",
+  "Make technology feel simple enough for real people.",
+  "Stay ambitious, but keep the work honest.",
+  "Represent Nigerian builders with global standards."
 ];
 
 const timeline = [
@@ -140,6 +165,7 @@ export function PortfolioSite() {
       <Header />
       <Hero />
       <About />
+      <Now />
       <FeaturedProjects />
       <Skills />
       <Journey />
@@ -196,15 +222,19 @@ function Hero() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/7 px-3 py-2 text-xs font-medium text-white/72 shadow-2xl backdrop-blur-xl">
             <Sparkles className="size-4 text-emerald-200" />
-            Building fintech, software, and tech media from Nigeria
+            Live from Nigeria: learning, shipping, documenting
           </div>
           <h1 className="font-display text-[clamp(3rem,8vw,7rem)] font-semibold leading-[0.93] tracking-normal text-white text-balance">
             Hi, I&apos;m Mustapha Mele Mustapha
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl">
             Founder, product builder, and tech creator from Nigeria. I&apos;m building AxisVTU,
-            growing MMTechGlobe, and documenting the journey as a young entrepreneur with global
-            ambition.
+            growing MMTechGlobe, and learning in public with the kind of ambition that starts small,
+            stays honest, and keeps moving.
+          </p>
+          <p className="mt-4 max-w-xl text-sm leading-7 text-white/48">
+            This is not just a portfolio. It is a record of a young builder turning late nights,
+            experiments, code, content, and faith in the future into products people can actually use.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -225,13 +255,20 @@ function Hero() {
           <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
             {[
               ["01", "Founder"],
-              ["02", "Builder"],
-              ["03", "Creator"]
+              ["02", "Product mind"],
+              ["03", "Public learner"]
             ].map(([number, label]) => (
               <div key={label} className="rounded-2xl border border-white/10 bg-white/6 p-4 backdrop-blur-xl">
                 <p className="font-display text-xl font-semibold text-white">{number}</p>
                 <p className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-white/46">{label}</p>
               </div>
+            ))}
+          </div>
+          <div className="mt-4 flex max-w-2xl flex-wrap gap-2 text-xs text-white/54">
+            {["Fintech builder", "Frontend craft", "Flutter learner", "AI-assisted workflow"].map((item) => (
+              <span key={item} className="rounded-full border border-white/10 bg-black/22 px-3 py-1.5">
+                {item}
+              </span>
             ))}
           </div>
         </motion.div>
@@ -252,10 +289,13 @@ function Hero() {
               className="aspect-[4/3] w-full rounded-[1.55rem] object-cover"
             />
             <div className="absolute inset-x-5 bottom-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {["AxisVTU", "MMTechGlobe", "Build in public"].map((item) => (
+              {["AxisVTU", "MMTechGlobe", "Build in public"].map((item, index) => (
                 <div key={item} className="rounded-xl border border-white/12 bg-black/42 px-3 py-3 backdrop-blur-xl">
-                  <p className="text-xs font-semibold text-white/88">{item}</p>
-                  <p className="mt-1 text-[11px] text-white/46">Active signal</p>
+                  <div className="flex items-center gap-2">
+                    <span className={`size-1.5 rounded-full ${index === 0 ? "bg-emerald-200" : "bg-white/42"}`} />
+                    <p className="text-xs font-semibold text-white/88">{item}</p>
+                  </div>
+                  <p className="mt-1 text-[11px] text-white/46">{index === 0 ? "Shipping now" : "Growing steadily"}</p>
                 </div>
               ))}
             </div>
@@ -268,24 +308,75 @@ function Hero() {
 
 function About() {
   return (
-    <Section id="about" eyebrow="About" title="A serious builder with student hunger and founder discipline.">
+    <Section id="about" eyebrow="About" title="The human side of the builder.">
       <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <Card className="p-6 sm:p-8">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/66">Founder note</p>
           <p className="text-lg leading-8 text-white/72">
-            Mustapha Mele Mustapha is a Nigerian tech student building real products while learning
-            in the open. His work sits where software, fintech, AI tools, content, and brand trust
-            meet: practical technology that can serve people today and scale into something larger
-            tomorrow.
+            I am a Nigerian tech student building real products while I am still becoming the person
+            who can build bigger ones. That means studying, designing, coding, testing, sharing, and
+            learning from every rough edge.
           </p>
           <p className="mt-5 text-base leading-7 text-white/58">
-            Through AxisVTU, he is exploring how simple digital services can become dependable
-            financial utility. Through MMTechGlobe, he turns learning into public proof, sharing the
-            path with other young builders who want more than theory.
+            AxisVTU is where I practice product responsibility. MMTechGlobe is where I turn the
+            journey into value for others. The bigger goal is to become a builder people can trust:
+            clear in thought, serious in execution, and still human in the process.
           </p>
+          <div className="mt-7 rounded-2xl border border-emerald-100/14 bg-emerald-100/[0.055] p-5">
+            <p className="text-sm leading-7 text-emerald-50/74">
+              “I want my work to prove that a young Nigerian builder can start with curiosity,
+              discipline, and a laptop, then grow into something useful for people far beyond his
+              first environment.”
+            </p>
+          </div>
         </Card>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-          <MiniSignal icon={ShieldCheck} title="Trust first" body="Products that feel clear, useful, and reliable." />
-          <MiniSignal icon={Rocket} title="Global ambition" body="Building from Nigeria with standards that can travel." />
+          <MiniSignal icon={ShieldCheck} title="Trust first" body="Products should feel clear before they feel clever." />
+          <MiniSignal icon={Rocket} title="Global ambition" body="Building from Nigeria with taste, patience, and standards that can travel." />
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function Now() {
+  return (
+    <Section id="now" eyebrow="Now" title="What is alive on the workbench.">
+      <div className="grid gap-4 lg:grid-cols-[0.85fr_1.15fr]">
+        <Card className="relative overflow-hidden p-6 sm:p-8">
+          <div className="absolute right-6 top-6 flex items-center gap-2 rounded-full border border-emerald-100/16 bg-emerald-100/8 px-3 py-1.5 text-xs font-semibold text-emerald-50/78">
+            <span className="size-2 rounded-full bg-emerald-200 shadow-[0_0_18px_rgba(167,243,208,0.75)]" />
+            Active
+          </div>
+          <BookOpen className="size-7 text-emerald-100" />
+          <h3 className="mt-7 font-display text-3xl font-semibold leading-tight text-white">
+            The page is polished, but the journey is still in motion.
+          </h3>
+          <p className="mt-4 text-base leading-7 text-white/60">
+            I am not waiting to become perfect before building. I am using the process itself as the
+            training ground: ship, learn, improve, share, repeat.
+          </p>
+        </Card>
+        <div className="grid gap-4">
+          {nowSignals.map((signal, index) => (
+            <motion.div
+              key={signal.label}
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.45, delay: index * 0.06 }}
+              className="group rounded-3xl border border-white/10 bg-white/[0.052] p-5 transition hover:border-emerald-100/22 hover:bg-white/[0.075] sm:p-6"
+            >
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-100/62">{signal.label}</p>
+                <span className="h-px flex-1 bg-white/10 sm:mx-4" />
+                <Sparkles className="hidden size-4 text-white/30 transition group-hover:text-emerald-100 sm:block" />
+              </div>
+              <h3 className="mt-4 font-display text-xl font-semibold text-white sm:text-2xl">{signal.value}</h3>
+              <p className="mt-2 text-sm leading-6 text-white/56">{signal.detail}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </Section>
@@ -294,7 +385,7 @@ function About() {
 
 function FeaturedProjects() {
   return (
-    <Section id="projects" eyebrow="Featured projects" title="Products and brands with a real point of view.">
+    <Section id="projects" eyebrow="Featured projects" title="Not just projects. Proof of direction.">
       <div className="grid gap-4 lg:grid-cols-3">
         {projects.map((project, index) => {
           const Icon = project.icon;
@@ -320,6 +411,16 @@ function FeaturedProjects() {
                 </div>
                 <h3 className="font-display text-2xl font-semibold text-white">{project.name}</h3>
                 <p className="mt-4 min-h-28 text-sm leading-6 text-white/62">{project.description}</p>
+                <div className="mt-5 rounded-2xl border border-white/10 bg-black/18 p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/36">Why it matters</p>
+                  <p className="mt-2 text-sm leading-6 text-white/58">
+                    {project.name === "AxisVTU"
+                      ? "It teaches the discipline of reliability: people do not just click buttons, they trust a product with real needs."
+                      : project.name === "MMTechGlobe"
+                        ? "It turns learning into a public asset and helps other young builders feel less alone in the process."
+                        : "It keeps experimentation close to the work, so ideas are tested before they become big promises."}
+                  </p>
+                </div>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.stack.map((tag) => (
                     <span key={tag} className="rounded-full border border-white/10 bg-white/7 px-3 py-1 text-xs text-white/58">
@@ -346,7 +447,14 @@ function FeaturedProjects() {
 
 function Skills() {
   return (
-    <Section id="skills" eyebrow="Capabilities" title="The stack behind the ambition.">
+    <Section id="skills" eyebrow="Capabilities" title="Skills with product judgment behind them.">
+      <div className="mb-5 grid gap-3 lg:grid-cols-4">
+        {principles.map((principle) => (
+          <div key={principle} className="rounded-2xl border border-white/10 bg-black/18 p-4">
+            <p className="text-sm leading-6 text-white/62">{principle}</p>
+          </div>
+        ))}
+      </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {skills.map((skill, index) => {
           const Icon = skill.icon;
@@ -372,7 +480,7 @@ function Skills() {
 
 function Journey() {
   return (
-    <Section id="journey" eyebrow="Journey" title="A public path from learner to founder.">
+    <Section id="journey" eyebrow="Journey" title="The story is still being written in public.">
       <div className="relative">
         <div className="absolute left-4 top-0 hidden h-full w-px bg-white/10 sm:block" />
         <div className="grid gap-4">
@@ -412,6 +520,12 @@ function BuildingInPublic() {
             and what improved. Mustapha uses content as accountability, education, and proof of
             momentum.
           </p>
+          <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-4">
+            <p className="text-sm leading-7 text-white/58">
+              The goal is not to look finished. The goal is to show the becoming: the thinking, the
+              experiments, the lessons, the better version after every launch.
+            </p>
+          </div>
         </Card>
         <div className="grid gap-4 sm:grid-cols-3">
           {channels.map((channel) => {
@@ -438,8 +552,16 @@ function Contact() {
           <div>
             <p className="max-w-2xl text-lg leading-8 text-white/66">
               Open to thoughtful collaborations, product conversations, internships, partnerships,
-              and opportunities that connect software with real-world value.
+              and opportunities that connect software with real-world value. If the work is serious,
+              useful, and honest, I want to hear about it.
             </p>
+            <div className="mt-6 grid max-w-2xl gap-3 sm:grid-cols-3">
+              {["Product ideas", "Founder conversations", "Tech opportunities"].map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-black/18 p-4">
+                  <p className="text-sm font-semibold text-white/74">{item}</p>
+                </div>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="mailto:hello@mustaphamele.dev"
@@ -485,10 +607,10 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-white/48 sm:flex-row sm:items-center sm:justify-between">
-        <p>© 2026 Mustapha Mele Mustapha. Built with intention.</p>
+        <p>© 2026 Mustapha Mele Mustapha. Built with intention, pressure, and patience.</p>
         <div className="flex items-center gap-2">
           <CheckCircle2 className="size-4 text-emerald-100" />
-          <span>Founder, builder, creator from Nigeria.</span>
+          <span>Still learning. Still shipping. Still becoming.</span>
         </div>
       </div>
     </footer>
