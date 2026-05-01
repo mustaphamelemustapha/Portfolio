@@ -202,7 +202,7 @@ function Header() {
         </div>
         <a
           href="mailto:hello@mustaphamele.dev"
-          className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-100/32 bg-emerald-100 px-4 py-2.5 text-sm font-bold text-[#07110d] transition hover:border-white hover:bg-white"
+          className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-200 bg-emerald-200 px-4 py-2.5 text-sm font-black text-[#03110b] shadow-[0_10px_30px_rgba(110,231,183,0.18)] transition hover:border-white hover:bg-white"
         >
           Contact
           <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
@@ -568,14 +568,14 @@ function Contact() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="mailto:hello@mustaphamele.dev"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-100 px-6 py-3 text-sm font-bold text-[#07110d] transition hover:bg-white"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-emerald-200 px-6 py-3 text-sm font-black text-[#03110b] shadow-[0_12px_34px_rgba(110,231,183,0.18)] transition hover:border-white hover:bg-white"
               >
                 <Mail className="size-4" />
                 Email Mustapha
               </a>
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/7 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/12"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/28 bg-white/12 px-6 py-3 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition hover:border-white/45 hover:bg-white/18"
               >
                 <BriefcaseBusiness className="size-4" />
                 See Work
