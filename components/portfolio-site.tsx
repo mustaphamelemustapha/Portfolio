@@ -334,6 +334,28 @@ function About() {
           </div>
         </Card>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          <motion.div
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.55 }}
+            className="group overflow-hidden rounded-3xl border border-white/12 bg-white/[0.055] p-2 shadow-2xl backdrop-blur-xl sm:col-span-2 lg:col-span-1"
+          >
+            <div className="relative overflow-hidden rounded-[1.35rem] bg-white">
+              <Image
+                src="/images/mustapha-portrait.jpeg"
+                alt="Portrait of Mustapha Mele Mustapha"
+                width={1200}
+                height={1200}
+                className="aspect-[4/5] w-full object-cover object-[50%_18%] transition duration-700 group-hover:scale-[1.025]"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/72 via-black/20 to-transparent p-5">
+                <p className="font-display text-2xl font-semibold text-white">Mustapha Mele Mustapha</p>
+                <p className="mt-1 text-sm font-medium text-white/82">Founder, builder, tech creator</p>
+              </div>
+            </div>
+          </motion.div>
           <MiniSignal icon={ShieldCheck} title="Trust first" body="Products should feel clear before they feel clever." />
           <MiniSignal icon={Rocket} title="Global ambition" body="Building from Nigeria with taste, patience, and standards that can travel." />
         </div>
