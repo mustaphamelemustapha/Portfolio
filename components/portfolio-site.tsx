@@ -140,11 +140,11 @@ const channels = [
 ];
 
 const socials = [
-  { name: "GitHub", icon: GitBranch, href: "https://github.com/" },
-  { name: "LinkedIn", icon: Network, href: "https://www.linkedin.com/" },
-  { name: "YouTube", icon: PlayCircle, href: "https://www.youtube.com/" },
+  { name: "GitHub", icon: GitBranch, href: "https://github.com/mustaphamelemustapha" },
+  { name: "LinkedIn", icon: Network, href: "https://www.linkedin.com/in/mustapha-mele-mustapha-a4ba431b2" },
+  { name: "YouTube", icon: PlayCircle, href: "https://youtube.com/mmtechglobe/" },
   { name: "TikTok", icon: Music2, href: "https://www.tiktok.com/" },
-  { name: "Instagram", icon: Camera, href: "https://www.instagram.com/" }
+  { name: "Instagram", icon: Camera, href: "https://instagram.com/mele_jr__" }
 ];
 
 const fadeIn = {
@@ -201,7 +201,7 @@ function Header() {
           ))}
         </div>
         <a
-          href="mailto:hello@mustaphamele.dev"
+          href="mailto:mmtechglobe@gmail.com"
           className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-emerald-200 bg-emerald-200 px-4 py-2.5 text-sm font-black text-[#03110b] shadow-[0_10px_30px_rgba(110,231,183,0.18)] transition hover:border-white hover:bg-white"
         >
           Contact
@@ -567,7 +567,7 @@ function Contact() {
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="mailto:hello@mustaphamele.dev"
+                href="mailto:mmtechglobe@gmail.com"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-emerald-200 px-6 py-3 text-sm font-black text-[#03110b] shadow-[0_12px_34px_rgba(110,231,183,0.18)] transition hover:border-white hover:bg-white"
               >
                 <Mail className="size-4" />
